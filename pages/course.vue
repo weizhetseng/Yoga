@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const isModal = ref(false)
+useSeoMeta({
+  title: 'DOYOGA-課程介紹-適合各級學員的專業瑜珈訓練',
+  description:
+    '了解我們提供的瑜珈課程，從基礎到進階，專為不同需求設計的訓練課程，幫助學員達到健康和靈活性的目標。',
+  keywords: '瑜珈課程, 瑜珈訓練, 健康, 靈活性, 身心平衡',
+})
 </script>
 
 <template>

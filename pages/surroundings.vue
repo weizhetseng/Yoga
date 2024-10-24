@@ -1,3 +1,11 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: '瑜珈空間 | DOYOGA 瑜伽課程與指導',
+  description: '',
+  keywords: '',
+})
+</script>
+
 <template>
   <main class="mt-16">
     <div class="container">

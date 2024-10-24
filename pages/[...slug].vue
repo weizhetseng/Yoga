@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: ' DOYOGA 瑜伽課程與指導',
+  description:
+    '聯絡 DOYOGA，了解更多關於我們的瑜伽課程、私人教學和最新活動資訊。我們的專業瑜伽老師隨時為您解答各種問題。',
+  keywords: '瑜伽, DOYOGA, 瑜伽課程, 瑜伽教學, 私人瑜伽, 瑜伽空間, 聯絡我們',
+})
+</script>
+
 <template>
   <main class="mt-16 mb-26">
     <div class="container">

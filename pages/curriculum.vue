@@ -1,3 +1,11 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: '本月課表 | DOYOGA 瑜伽課程與指導',
+  description: '',
+  keywords: '',
+})
+</script>
+
 <template>
   <main class="mt-16 mb-26">
     <div class="container">

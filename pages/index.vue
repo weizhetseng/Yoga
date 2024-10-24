@@ -14,5 +14,3 @@ register()
     <HomeComment />
   </main>
 </template>
-
-

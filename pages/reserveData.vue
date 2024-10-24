@@ -1,4 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  title: '立即預約-填寫資料 | DOYOGA 瑜伽課程與指導',
+  description: '',
+  keywords: '',
+})
+</script>
 
 <template>
   <main class="pt-16 pb-26">

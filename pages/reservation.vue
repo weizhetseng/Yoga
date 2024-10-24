@@ -7,8 +7,6 @@ import yoga13 from '../assets/image/yoga-13.jpg'
 
 useSeoMeta({
   title: '立即預約-選擇方案 | DOYOGA 瑜伽課程與指導',
-  description: '',
-  keywords: '',
 })
 
 register()

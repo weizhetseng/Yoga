@@ -1,34 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import teacher1 from '../../assets/image/teacher-1.png'
-import teacher2 from '../../assets/image/teacher-2.png'
-import teacher3 from '../../assets/image/teacher-3.png'
+const activeIndex = ref('')
 
-const activeIndex = ref(1)
+type Teacher = {
+  _id: string
+  imgURL: string
+  name: string
+  years: number
+  content: string
+}
 
-const teachList = [
-  {
-    Id: 1,
-    imgURL: teacher1,
-    name: 'Carol Tang',
-    years: 10,
-    content: '瑜珈讓我重新認識自己的身體，也讓我有了不一樣的人生。',
-  },
-  {
-    Id: 2,
-    imgURL: teacher2,
-    name: 'Kanae',
-    years: 10,
-    content: '瑜珈讓我重新認識自己的身體，也讓我有了不一樣的人生。',
-  },
-  {
-    Id: 3,
-    imgURL: teacher3,
-    name: 'Asa Ifrit',
-    years: 10,
-    content: '瑜珈讓我重新認識自己的身體，也讓我有了不一樣的人生。',
-  },
-]
+const { data: teacherList } = await useFetch<Teacher[]>('/api/teacher')
 </script>
 
 <template>
@@ -42,17 +23,17 @@ const teachList = [
         <p class="text-xl text-brown2 mb-8">
           強力師資，經歷豐富，協會認證。運用引導式教學，針對不同需求的人制定專屬課程。
         </p>
-        <ul class="lg:-ml-20" @mouseleave="activeIndex = teachList[0].Id">
+        <ul class="lg:-ml-20" @mouseleave="activeIndex = teacherList?.[0]?._id">
           <li
             class="mb-7.5 group"
-            @mouseenter="activeIndex = item.Id"
-            v-for="item in teachList"
-            :key="item.Id"
+            @mouseenter="activeIndex = item._id"
+            v-for="item in teacherList"
+            :key="item._id"
           >
             <div
               class="bg-white rounded-2xl flex gap-5 items-center origin-right duration-300 md:group-hover:px-12 md:group-hover:py-10 ml-auto md:group-hover:w-full px-4 py-4 w-full"
               :class="
-                activeIndex === item.Id
+                activeIndex === item._id
                   ? 'md:px-12 md:py-10'
                   : 'md:px-8 md:py-6 md:w-11/12 lg:w-4/5'
               "
@@ -60,15 +41,15 @@ const teachList = [
               <img
                 :src="item.imgURL"
                 alt=""
-                class="md:group-hover:w-24 md:group-hover:h-24 rounded-full"
-                :class="activeIndex === item.Id ? 'md:w-24 md:h-24' : ''"
+                class="w-16 h-16 md:group-hover:w-24 md:group-hover:h-24 rounded-full"
+                :class="activeIndex === item._id ? 'md:w-24 md:h-24' : ''"
               />
               <div class="text-textGray">
                 <p class="text-xl">{{ item.name }} 老師</p>
                 <p>教學經歷 {{ item.years }} 年</p>
                 <p
                   class="md:group-hover:block"
-                  :class="activeIndex === item.Id ? 'block' : 'hidden'"
+                  :class="activeIndex === item._id ? 'block' : 'hidden'"
                 >
                   {{ item.content }}
                 </p>

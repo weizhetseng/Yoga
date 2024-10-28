@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { $gsap } = useNuxtApp()
+
 type Plan = {
   _id: string
   imgURL: string
@@ -7,10 +9,37 @@ type Plan = {
   content: string
 }
 const { data: planList } = await useFetch<Plan[]>('/api/plan')
+
+onMounted(() => {
+  const listItems = document.querySelectorAll('.plan li')
+
+  const tl = $gsap.timeline({
+    scrollTrigger: {
+      trigger: '.plan',
+      markers: true,
+      start: 'top 30%',
+      end: 'top 1%',
+      toggleActions: 'play complete play reset',
+    },
+  })
+
+  listItems.forEach((item, index) => {
+    tl.from(
+      item,
+      {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: 'power2.out',
+      },
+      index * 0.2
+    )
+  })
+})
 </script>
 
 <template>
-  <div class="pt-10 pb-14">
+  <div class="plan pt-10 pb-14">
     <div class="container">
       <h3 class="text-7 text-brown1 mb-1 text-center">方案選擇</h3>
       <p class="text-xl text-brown2 text-center mb-8">DOYOGA 可以帶給你...</p>

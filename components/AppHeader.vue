@@ -59,7 +59,10 @@ watch(
           >
         </li>
       </ul>
-      <div class="flex lg:hidden flex-col gap-1 flex-1 justify-center items-end" @click="toggleNav">
+      <div
+        class="flex lg:hidden flex-col cursor-pointer gap-1 flex-1 justify-center items-end"
+        @click="toggleNav"
+      >
         <span class="w-8 h-1 bg-brown1"></span>
         <span class="w-8 h-1 bg-brown1"></span>
         <span class="w-8 h-1 bg-brown1"></span>
@@ -67,8 +70,8 @@ watch(
     </div>
   </header>
   <div
-    class="fixed p-10 w-full duration-500 bg-brown3 top-[70.34px] left-0 z-50 border-t border-brown1"
-    :class="isNav ? 'h-full opacity-100' : 'h-0 opacity-0'"
+    class="fixed w-full duration-500 bg-brown3 top-[70.34px] left-0 z-50 border-t border-brown1 overflow-hidden"
+    :class="isNav ? 'h-full opacity-100 p-10' : 'h-0 opacity-0'"
     ref="mobile"
   >
     <ul class="">

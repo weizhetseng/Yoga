@@ -10,7 +10,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-
   modules: ['@nuxt/icon'],
   vue: {
     compilerOptions: {
@@ -19,5 +18,8 @@ export default defineNuxtConfig({
   },
   nitro: {
     plugins: ['~/server/db/index.ts'],
+  },
+  build: {
+    transpile: ['gsap'],
   },
 })

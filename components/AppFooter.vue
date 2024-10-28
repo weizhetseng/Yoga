@@ -8,7 +8,7 @@
             <input
               type="text"
               placeholder="輸入您的電子信箱"
-              class="px-4 py-2 text-brown1 outline-none"
+              class="px-4 py-2 text-brown1 flex-1 w-full outline-none"
             />
             <button type="submit" class="px-4 py-2 bg-brown2 text-white">訂閱</button>
           </form>

@@ -151,7 +151,7 @@ onMounted(() => {
   <main class="pt-16 pb-26">
     <div class="container">
       <h2 class="text-7 mb-4 text-center text-brown1">立即預約</h2>
-      <ul class="flex items-center justify-center mb-8 gap-4 md:gap-7.5">
+      <ul class="flex items-center flex-wrap justify-center mb-8 gap-4 md:gap-7.5">
         <li class="p-5 md:px-12 py-3 rounded-2xl text-white bg-brown1">
           <p>選擇方案</p>
         </li>

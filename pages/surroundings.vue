@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: '瑜珈空間 | DOYOGA 瑜伽課程與指導',
+  title: '瑜珈空間 | DOYOGA 瑜珈課程與指導',
 })
 </script>
 

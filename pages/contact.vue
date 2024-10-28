@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: '聯絡我們 | DOYOGA 瑜伽課程與指導',
+  title: '聯絡我們 | DOYOGA 瑜珈課程與指導',
   description:
-    '聯絡我們以了解更多關於 DOYOGA 提供的瑜伽課程、私人教學和活動資訊。我們的專業瑜伽老師隨時為您解答。',
-  keywords: '瑜伽, 聯絡我們, DOYOGA, 瑜伽課程, 瑜伽教學, 私人瑜伽指導',
+    '聯絡我們以了解更多關於 DOYOGA 提供的瑜珈課程、私人教學和活動資訊。我們的專業瑜珈老師隨時為您解答。',
+  keywords: '瑜珈, 聯絡我們, DOYOGA, 瑜珈課程, 瑜珈教學, 私人瑜珈指導',
 })
 </script>
 

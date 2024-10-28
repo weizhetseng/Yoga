@@ -6,7 +6,7 @@ import yoga12 from '../assets/image/yoga-12.jpg'
 import yoga13 from '../assets/image/yoga-13.jpg'
 
 useSeoMeta({
-  title: '立即預約-選擇方案 | DOYOGA 瑜伽課程與指導',
+  title: '立即預約-選擇方案 | DOYOGA 瑜珈課程與指導',
 })
 
 register()
@@ -106,7 +106,7 @@ const planList = [
     imgURL: yoga13,
     name: '長期體驗',
     price: 'NT $5600 / 季',
-    content: '分基礎、中級、高級可以選擇。有長期習慣做瑜伽者建議選擇此方案。',
+    content: '分基礎、中級、高級可以選擇。有長期習慣做瑜珈者建議選擇此方案。',
     level: [
       {
         Id: 1,

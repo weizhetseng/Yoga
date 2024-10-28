@@ -1,3 +1,29 @@
+<script setup lang="ts">
+const mobile = ref<HTMLElement | null>(null)
+
+const isNav = ref(false)
+const mobileHeight = ref(0)
+
+function toggleNav() {
+  isNav.value = !isNav.value
+
+  if (mobile.value) {
+    mobileHeight.value = mobile.value.scrollHeight
+  }
+}
+
+watch(
+  () => isNav.value,
+  () => {
+    if (isNav.value) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }
+)
+</script>
+
 <template>
   <header class="bg-brown3">
     <div class="container flex py-5">
@@ -10,7 +36,7 @@
             <NuxtLink to="/course">課程介紹</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/surroundings">瑜伽空間</NuxtLink>
+            <NuxtLink to="/surroundings">瑜珈空間</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/curriculum">當月課表</NuxtLink>
@@ -33,11 +59,79 @@
           >
         </li>
       </ul>
-      <div class="flex lg:hidden flex-col gap-1 flex-1 justify-center items-end">
+      <div class="flex lg:hidden flex-col gap-1 flex-1 justify-center items-end" @click="toggleNav">
         <span class="w-8 h-1 bg-brown1"></span>
         <span class="w-8 h-1 bg-brown1"></span>
         <span class="w-8 h-1 bg-brown1"></span>
       </div>
     </div>
   </header>
+  <div
+    class="fixed p-10 w-full duration-500 bg-brown3 top-[70.34px] left-0 z-50 border-t border-brown1"
+    :class="isNav ? 'h-full opacity-100' : 'h-0 opacity-0'"
+    ref="mobile"
+  >
+    <ul class="">
+      <li
+        class="mb-5 last:mb-0 duration-300 delay-[50ms]"
+        :class="isNav ? 'translate-x-0' : '-translate-x-1/4'"
+        :style="{ animationDelay: isNav ? '.35s' : '0s' }"
+      >
+        <NuxtLink
+          to="/course"
+          class="text-brown1 text-2xl font-bold text-center block"
+          @click="isNav = false"
+          >課程介紹</NuxtLink
+        >
+      </li>
+      <li
+        class="mb-5 last:mb-0 duration-300 delay-100"
+        :class="isNav ? 'translate-x-0' : '-translate-x-1/4'"
+        :style="{ animationDelay: isNav ? '.4s' : '0s' }"
+      >
+        <NuxtLink
+          to="/surroundings"
+          class="text-brown1 text-2xl font-bold text-center block"
+          @click="isNav = false"
+          >瑜珈空間</NuxtLink
+        >
+      </li>
+      <li
+        class="mb-5 last:mb-0 duration-300 delay-150"
+        :class="isNav ? 'translate-x-0' : '-translate-x-1/4'"
+        :style="{ animationDelay: isNav ? '.45s' : '0s' }"
+      >
+        <NuxtLink
+          to="/curriculum"
+          class="text-brown1 text-2xl font-bold text-center block"
+          @click="isNav = false"
+          >當月班表</NuxtLink
+        >
+      </li>
+      <li
+        class="mb-5 last:mb-0 duration-300 delay-200"
+        :class="isNav ? 'translate-x-0' : '-translate-x-1/4'"
+        :style="{ animationDelay: isNav ? '.5s' : '0s' }"
+      >
+        <NuxtLink
+          to="/reservation"
+          class="text-brown1 text-2xl font-bold text-center block"
+          @click="isNav = false"
+          >立即預約</NuxtLink
+        >
+      </li>
+      <li
+        class="mb-5 last:mb-0 duration-300 delay-[250ms]"
+        :class="isNav ? 'translate-x-0' : '-translate-x-1/4'"
+        :style="{ animationDelay: isNav ? '.55s' : '0s' }"
+      >
+        <NuxtLink
+          to="/contact"
+          class="text-brown1 text-2xl font-bold text-center block"
+          @click="isNav = false"
+          >聯絡我們</NuxtLink
+        >
+      </li>
+    </ul>
+  </div>
 </template>
